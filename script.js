@@ -7,6 +7,7 @@ ctx.fillRect(0,0, canvas.width, canvas.height);
 
 const squareSize = 30;
 
+
 function drawQuadrillage() {
     let horizontal = 0;
     let vertical = 0;
