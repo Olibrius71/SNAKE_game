@@ -1,4 +1,31 @@
 #canvas-container {
     text-align: center;
+}
 
+body {margin: 0;}
+
+#navbar {
+    background-color : #BABABA;
+    display : flex;
+}
+
+#logo {
+    margin-right: 1.5rem;
+}
+
+.btn {
+    font-size: 2rem;
+    border: none;
+    background-color: #BABABA;
+}
+
+.btn:nth-of-type(1) {
+    border-bottom: 3px solid #199E58;
+}
+
+.btn a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
 }
