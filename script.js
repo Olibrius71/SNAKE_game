@@ -102,7 +102,7 @@ let rightsBottBtn = document.getElementsByTagName('p').item(5);
  */
 switchBtn.addEventListener('click', event => {
 
-    if(imgSwitch.getAttribute('src') == 'img/ligne%20de%20défilement%20bas.png') {
+    if(imgSwitch.getAttribute('src') == srcBottScrollLien) {
         homeBtn.style.border = 'none';
         rightsBtn.style.borderBottom = '3px solid #199E58';
         rightsDisplay.style.display = 'flex';
