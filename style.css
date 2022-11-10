@@ -2,15 +2,21 @@
     text-align: center;
 }
 
-body {margin: 0;
-      font-family: Arial, sans-serif;}
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #E9E9E9;
+    font-family: Arial, sans-serif;
+}
 
 /**
 CSS -- Navbar
 */
 #navbar {
-    background-color : #BABABA;
     display : flex;
+    background-color : #BABABA;
 }
 
 #logo {
@@ -43,12 +49,15 @@ CSS -- Header
     text-align: center;
 }
 
-#header h1 {margin: 0;
-            padding: 3rem 0rem 3rem 0rem;}
+#header h1 {
+    margin: 0;
+    padding: 3rem 0rem 3rem 0rem;
+}
 
 #switch {
     display: flex;
     flex-direction: column;
+
 }
 
 #switch a {
@@ -61,4 +70,40 @@ CSS -- Header
     margin: auto;
     margin-bottom: 0.5rem;
     width: 50px;
+}
+
+
+/**
+CSS - Main
+*/
+#main {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#playBtn {
+    background-color: #199E58;
+    width: 12.5rem;
+    height: 6.25rem;
+    border-radius: 25px;
+    font-size: 2.188rem;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+}
+
+/**
+CSS - Footer
+*/
+#footer {
+    background-color: #BABABA;
+    color: white;
+    text-align:center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px;
 }
