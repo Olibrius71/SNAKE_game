@@ -29,6 +29,7 @@ CSS -- Navbar
     background-color: #BABABA;
 }
 
+
 .btn:nth-of-type(1) {
     border-bottom: 3px solid #199E58;
 }
@@ -51,7 +52,7 @@ CSS -- Header
 
 #header h1 {
     margin: 0;
-    padding: 3rem 0rem 3rem 0rem;
+    padding: 3rem 0rem 1.5rem 0rem;
 }
 
 #switch {
@@ -72,7 +73,18 @@ CSS -- Header
     width: 50px;
 }
 
+.rights-display ul {
+    width: 30rem;
+    list-style-type: none;
 
+}
+.rights-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+}
 /**
 CSS - Main
 */
