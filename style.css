@@ -73,12 +73,12 @@ CSS -- Header
     width: 50px;
 }
 
-.rights-display ul {
+.rules-display ul {
     width: 30rem;
     list-style-type: none;
 
 }
-.rights-display {
+.rules-display {
     display: flex;
     flex-direction: column;
     justify-content: center;

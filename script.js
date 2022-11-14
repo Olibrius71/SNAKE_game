@@ -73,9 +73,27 @@ drawSquares();
 // {#homeBtn} contain the home button on the navbar
 let homeBtn = document.getElementsByTagName('button').item(0);
 // {#rightsBtn} contain the rights button on the navbar
-let rightsBtn = document.getElementsByTagName('button').item(1);
+let rulesBtn = document.getElementsByTagName('button').item(1);
 // {#playBtn} contain the play button on the navbar
 let playBtn = document.getElementsByTagName('button').item(2);
+
+/**
+ * Events displaying or not displaying the rules on the header when we click in rules button in the Navbar
+ */
+rulesBtn.addEventListener('click', event => {
+    if(imgSwitch.getAttribute('src') == srcBottScrollLien) {
+        displayRules();
+    } else {
+        notDisplayRules();
+    }
+});
+
+/**
+ * Events displaying or not displaying the rules on the header when we click in rules button in the Navbar
+ */
+homeBtn.addEventListener('click', event => {
+    notDisplayRules();
+});
 
 
         /**********************
@@ -84,37 +102,48 @@ let playBtn = document.getElementsByTagName('button').item(2);
 
 // {#switchBtn} is the button for switch between welcome display and rights display
 let switchBtn = document.getElementById('switch');
-// {#rightsDisplay} contain the rights display
-let rightsDisplay = document.querySelector('.rights-display');
+// {#rulesDisplay} contain the rights display
+let rulesDisplay = document.querySelector('.rules-display');
 // {#imgSwitch} contain the scroll line image
 let imgSwitch = document.getElementsByTagName('img').item(1);
 // - top scroll line src
     let srcTopScrollLine = 'img/ligne%20de%20défilement%20haut.png';
 // - bott scroll line src
     let srcBottScrollLien = 'img/ligne%20de%20défilement%20bas.png';
-// {#rightsTopBtn} designate the title named 'Rights' at the top of the scroll bar
-let rightsTopbtn = document.getElementsByTagName('p').item(4);
-// {#rightsBottBtn} designate the title named 'Rights' at the bottom of the scroll bar
-let rightsBottBtn = document.getElementsByTagName('p').item(5);
+// {#rulesTopBtn} designate the title named 'Rules' at the top of the scroll bar
+let rulesTopbtn = document.getElementsByTagName('p').item(4);
+// {#rulesBottBtn} designate the title named 'Rules' at the bottom of the scroll bar
+let rulesBottBtn = document.getElementsByTagName('p').item(5);
+
+
+function displayRules() {
+    homeBtn.style.border = 'none';
+    rulesBtn.style.borderBottom = '3px solid #199E58';
+    rulesDisplay.style.display = 'flex';
+    rulesTopbtn.style.display = "none";
+    rulesBottBtn.style.display = "block";
+    imgSwitch.setAttribute('src', srcTopScrollLine);
+}
+
+function notDisplayRules() {
+    homeBtn.style.borderBottom = '3px solid #199E58';
+    rulesBtn.style.borderBottom = 'none';
+    rulesDisplay.style.display = 'none';
+    rulesTopbtn.style.display = "block";
+    rulesBottBtn.style.display = "none";
+    imgSwitch.setAttribute('src', srcBottScrollLien);
+}
+
+
 
 /**
- * Events displaying or not displaying the rights on the header
+ * Events displaying or not displaying the rules on the header when we click in rules button in the Header
  */
 switchBtn.addEventListener('click', event => {
 
     if(imgSwitch.getAttribute('src') == srcBottScrollLien) {
-        homeBtn.style.border = 'none';
-        rightsBtn.style.borderBottom = '3px solid #199E58';
-        rightsDisplay.style.display = 'flex';
-        rightsTopbtn.style.display = "none";
-        rightsBottBtn.style.display = "block";
-        imgSwitch.setAttribute('src', srcTopScrollLine);
+        displayRules();
     } else {
-        homeBtn.style.borderBottom = '3px solid #199E58';
-        rightsBtn.style.borderBottom = 'none';
-        rightsDisplay.style.display = 'none';
-        rightsTopbtn.style.display = "block";
-        rightsBottBtn.style.display = "none";
-        imgSwitch.setAttribute('src', srcBottScrollLien);
+        notDisplayRules();
     }
 });
