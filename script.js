@@ -89,16 +89,33 @@ rulesBtn.addEventListener('click', event => {
 });
 
 /**
- * Events displaying or not displaying the rules on the header when we click in rules button in the Navbar
+ * Events displaying the home on the header when we click in home button in the Navbar
  */
 homeBtn.addEventListener('click', event => {
     notDisplayRules();
 });
 
-
         /**********************
          * Display 1 : Header *
          **********************/
+
+function displayRules() {
+   homeBtn.style.border = 'none';
+   rulesBtn.style.borderBottom = '3px solid #199E58';
+   rulesDisplay.style.display = 'flex';
+   rulesTopbtn.style.display = "none";
+   rulesBottBtn.style.display = "block";
+   imgSwitch.setAttribute('src', srcTopScrollLine);
+}
+
+function notDisplayRules() {
+    homeBtn.style.borderBottom = '3px solid #199E58';
+    rulesBtn.style.borderBottom = 'none';
+    rulesDisplay.style.display = 'none';
+    rulesTopbtn.style.display = "block";
+    rulesBottBtn.style.display = "none";
+    imgSwitch.setAttribute('src', srcBottScrollLien);
+}
 
 // {#switchBtn} is the button for switch between welcome display and rights display
 let switchBtn = document.getElementById('switch');
@@ -115,27 +132,6 @@ let rulesTopbtn = document.getElementsByTagName('p').item(4);
 // {#rulesBottBtn} designate the title named 'Rules' at the bottom of the scroll bar
 let rulesBottBtn = document.getElementsByTagName('p').item(5);
 
-
-function displayRules() {
-    homeBtn.style.border = 'none';
-    rulesBtn.style.borderBottom = '3px solid #199E58';
-    rulesDisplay.style.display = 'flex';
-    rulesTopbtn.style.display = "none";
-    rulesBottBtn.style.display = "block";
-    imgSwitch.setAttribute('src', srcTopScrollLine);
-}
-
-function notDisplayRules() {
-    homeBtn.style.borderBottom = '3px solid #199E58';
-    rulesBtn.style.borderBottom = 'none';
-    rulesDisplay.style.display = 'none';
-    rulesTopbtn.style.display = "block";
-    rulesBottBtn.style.display = "none";
-    imgSwitch.setAttribute('src', srcBottScrollLien);
-}
-
-
-
 /**
  * Events displaying or not displaying the rules on the header when we click in rules button in the Header
  */
@@ -146,4 +142,35 @@ switchBtn.addEventListener('click', event => {
     } else {
         notDisplayRules();
     }
+});
+
+/********************
+ * Display 2 : Main *
+ ********************/
+
+// {#mainPlayBtn} contain the play button in the main
+let mainPlayBtn = document.getElementById('mainPlayBtn');
+//
+let gameSpace = document.getElementById('game-space');
+//
+let header = document.getElementById('header');
+
+function dropMain() {
+    console.log('test');
+    mainPlayBtn.style.display = "none";
+    header.style.display = "none";
+}
+
+function addGameSpace() {
+    gameSpace.style.display = "flex";
+}
+
+mainPlayBtn.addEventListener('click', event => {
+    dropMain();
+    addGameSpace();
+});
+
+playBtn.addEventListener('click', event => {
+    dropMain();
+    addGameSpace();
 });
