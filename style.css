@@ -11,9 +11,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/**
-CSS -- Navbar
-*/
 #navbar {
     display : flex;
     background-color : #BABABA;
@@ -43,9 +40,6 @@ CSS -- Navbar
     color: white;
 }
 
-/**
-CSS -- Header
-*/
 #header {
     background-color: #909090;
     color: white;
@@ -87,9 +81,7 @@ CSS -- Header
     text-align: left;
     align-items: center;
 }
-/**
-CSS - Main
-*/
+
 #main {
     display: flex;
     flex-grow: 1;
@@ -114,7 +106,6 @@ CSS - Main
     flex-direction: column;
     background-color: black;
     width: 100%;
-    height: 43.6rem;
 }
 
 #gs-navbar {
@@ -160,9 +151,11 @@ CSS - Main
     color: #199E58;
 }
 
-/**
-CSS - Footer
-*/
+#game {
+    height: 100%;
+    background-color: red;
+}
+
 #footer {
     background-color: #BABABA;
     color: white;
@@ -171,16 +164,4 @@ CSS - Footer
     left: 0;
     right: 0;
     padding: 0px;
-}
-
-
-
-
-
-
-
-
-
-.playBtn {
-    background-color: red; /*       TEST */
 }

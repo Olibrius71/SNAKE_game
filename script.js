@@ -89,56 +89,68 @@ let gameSpace = document.getElementById('game-space');
 let exitGameSpace = document.getElementById('gs-btn-exit');
 
 /**
+ * let main is the space that contain the the play button and the game space.
+ * @type {HTMLElement}
+ */
+let main = document.getElementById('main');
+
+/**
  * displayRules() is the function who displayed the rules in the header.
  */
 function displayRules() {
-    homeBtn.style.border = 'none';
-    rulesBtn.style.borderBottom = '3px solid #199E58';
-    rulesDisplay.style.display = 'flex';
-    rulesTopBtn.style.display = "none";
-    rulesBottBtn.style.display = "block";
     imgSwitch.setAttribute('src', srcTopScrollLine);
+    homeBtn.style.border            = 'none';
+    rulesBtn.style.borderBottom     = '3px solid #199E58';
+    rulesDisplay.style.display      = 'flex';
+    rulesTopBtn.style.display       = "none";
+    rulesBottBtn.style.display      = "block";
 }
 
 /**
  * notDisplayRules() is the function who undisplayed the rules in the header.
  */
 function notDisplayRules() {
-    homeBtn.style.borderBottom = '3px solid #199E58';
-    rulesBtn.style.borderBottom = 'none';
-    rulesDisplay.style.display = 'none';
-    rulesTopBtn.style.display = "block";
-    rulesBottBtn.style.display = "none";
     imgSwitch.setAttribute('src', srcBottScrollLien);
+    homeBtn.style.borderBottom      = '3px solid #199E58';
+    rulesBtn.style.borderBottom     = 'none';
+    rulesDisplay.style.display      = 'none';
+    rulesTopBtn.style.display       = "block";
+    rulesBottBtn.style.display      = "none";
 }
 
 /**
  * dropMain() is the function who drop all content of the main when state = 0 or 1.
  */
 function dropMain() {
-    console.log('test');
-    playBtn.style.borderBottom = '3px solid #199E58';
-    homeBtn.style.border  = 'none';
-    rulesBtn.style.border = 'none';
-    mainPlayBtn.style.display = "none";
-    header.style.display = "none";
+    playBtn.style.borderBottom      = '3px solid #199E58';
+    homeBtn.style.border            = 'none';
+    rulesBtn.style.border           = 'none';
+    mainPlayBtn.style.display       = "none";
+    header.style.display            = "none";
+    main.style.textAlign            = 'initial';
+    main.style.alignItems           = 'initial';
+    main.style.justifyContent       = 'initial';
+    gameSpace.style.height          = 'initial';
 }
 
 /**
  * dropGameSpace() is the function who drop all content of the game space when state = 2.
  */
 function dropGameSpace() {
-    playBtn.style.borderBottom = 'none';
-    gameSpace.style.display = "none";
-    mainPlayBtn.style.display = "inline-block";
-    header.style.display = "block";
+    playBtn.style.borderBottom      = 'none';
+    gameSpace.style.display         = "none";
+    mainPlayBtn.style.display       = "inline-block";
+    header.style.display            = "block";
+    main.style.textAlign            = 'center';
+    main.style.alignItems           = 'center';
+    main.style.justifyContent       = 'center';
 }
 
 /**
  * addGameSpace() is the function allowing to display the game space.
  */
 function addGameSpace() {
-    gameSpace.style.display = "flex";
+    gameSpace.style.display         = "flex";
 }
 
 /**
@@ -217,4 +229,4 @@ exitGameSpace.addEventListener('click', event => {
     displayRules();
     notDisplayRules();
     state = 0;
-})
+});
