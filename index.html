@@ -7,10 +7,8 @@
 </head>
 <body>
 
-
         <div id="navbar">
-
-            <img src="img/snake-logo.png" alt="" title="Logo" id="logo"/>
+            <img src="img/snake-logo.png" alt="logo" title="logo" id="logo"/>
             <button type="button" name="homeBtn" class="btn">
                 <a href="#">Home</a>
             </button>
@@ -20,30 +18,36 @@
             <button type="button" name="playBtn" class="btn">
                 <a href="#">Play</a>
             </button>
-
         </div>
 
         <div id="header">
 
-                <h1>Welcome to Snake</h1>
+            <h1>Welcome to Snake</h1>
 
-                <div class="rules-display" style="display:none">
-
+            <div class="rules-display" style="display:none">
                 <ul>
                     <li>
-                        <p>Snake is a 2D game where the goal is to move a snake towards apples. For indicate the directions
-                            to follow to the snake it’s necessary to use the arrow keys.</p>
+                        <p>
+                           Snake is a 2D game where the goal is to move a snake towards apples. For indicate the directions
+                           to follow to the snake it’s necessary to use the arrow keys.
+                        </p>
                     </li><br>
                     <li>
-                        <p>For every apples eaten, the snake grows bigger and bigger. The goal is to eat the most apples
-                         possible in order to the head of the snake don’t touch the border of the screen and his own body
-                        or else the game is over.</p>
+                        <p>
+                           For every apples eaten, the snake grows bigger and bigger. The goal is to eat the most apples
+                           possible in order to the head of the snake don’t touch the border of the screen and his own body
+                           or else the game is over.
+                        </p>
                     </li><br>
                     <li>
-                        <p>For the game to be a success, it’s necessary to the snake take up all the space.</p>
+                        <p>
+                            For the game to be a success, it’s necessary to the snake take up all the space.
+                        </p>
                     </li><br>
                     <li>
-                        <p>Several mode are available : Easy, Medium and Hard. Good luck !</p>
+                        <p>
+                            Several mode are available : Easy, Medium and Hard. Good luck !
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -59,7 +63,6 @@
         </div>
 
         <div id="main">
-
             <a href="#">
             <button type="button" name="mainPlayBtn" id="mainPlayBtn">
                 Play
@@ -70,7 +73,6 @@
 
                 <div id="gs-navbar">
 
-
                     <div class="gs-indication">
                         <p>Score : 0</p>
                         <p>Size : 0</p>
@@ -78,35 +80,30 @@
                     </div>
 
                     <div class="gs-btn">
-
                         <button id="gs-btn-mode">
-                            Mode
+                            <select name="cb-mode" id="cb-mode">
+                                <option>MODE</option>
+                                <option>Easy</option>
+                                <option>Medium</option>
+                                <option>Hardcore</option>
+                            </select>
                         </button>
 
                         <button id="gs-btn-exit">
                             Exit
                         </button>
-
                     </div>
-
 
                 </div>
 
             </div>
-
         </div>
 
         <div id="footer">
             <p>© M. AGHUMYAN & A. BEN JEMIA, All rights reserved</p>
         </div>
 
-
-
-        
-
-    <div id="canvas-container" style="display:none">
-        <canvas class="canvas" id="principal" width="600" height="600"></canvas>
-    </div>
 <script src="script.js"></script>
+
 </body>
 </html>
