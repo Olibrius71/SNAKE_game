@@ -118,19 +118,34 @@ CSS - Main
 }
 
 #gs-navbar {
-    background-color: green;
     display: flex;
+    background-color: #909090;
 }
 
 .gs-indication {
     display : flex;
-    background-color: dodgerblue;
+    justify-content: space-around;
+    color: white;
+    width: 40%;
+    font-size: 1.5rem ;
 }
 
 .gs-btn {
-    background-color: chocolate;
     display: flex;
-    align-content: end;
+    flex-grow: 1;
+    justify-content: end;
+    margin: 0.625rem;
+
+}
+
+.gs-btn button {
+    color: #199E58;
+    font-size: 2.188rem;
+    border: 2px solid #199E58;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    margin-left: 1rem;
+    width: 8rem;
 }
 
 /**
