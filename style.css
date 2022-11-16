@@ -11,16 +11,15 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/**
-CSS -- Navbar
-*/
 #navbar {
     display : flex;
     background-color : #BABABA;
 }
 
 #logo {
-    margin-right: 1.5rem;
+    margin-right: 1rem;
+    width: 75px;
+    height: 60px;
 }
 
 .btn {
@@ -41,9 +40,6 @@ CSS -- Navbar
     color: white;
 }
 
-/**
-CSS -- Header
-*/
 #header {
     background-color: #909090;
     color: white;
@@ -73,21 +69,19 @@ CSS -- Header
     width: 50px;
 }
 
-.rights-display ul {
+.rules-display ul {
     width: 30rem;
     list-style-type: none;
 
 }
-.rights-display {
+.rules-display {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
     align-items: center;
 }
-/**
-CSS - Main
-*/
+
 #main {
     display: flex;
     flex-grow: 1;
@@ -96,7 +90,7 @@ CSS - Main
     justify-content: center;
 }
 
-#playBtn {
+#mainPlayBtn {
     background-color: #199E58;
     width: 12.5rem;
     height: 6.25rem;
@@ -107,9 +101,61 @@ CSS - Main
     text-transform: uppercase;
 }
 
-/**
-CSS - Footer
-*/
+#game-space {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+}
+
+#gs-navbar {
+    display: flex;
+    background-color: #909090;
+}
+
+.gs-indication {
+    display : flex;
+    justify-content: space-around;
+    color: white;
+    width: 40%;
+    font-size: 1.5rem ;
+}
+
+.gs-btn {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    margin: 0.625rem;
+
+}
+
+.gs-btn button {
+    color: #199E58;
+    font-size: 1.5rem;
+    border: 2px solid #199E58;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    margin-left: 1rem;
+    width: 8rem;
+}
+
+#cb-mode {
+    background: none;
+    border: none;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    appearance: none;
+    color: #199E58;
+}
+
+#game {
+    height: 100%;
+    background-color: red;
+}
+
 #footer {
     background-color: #BABABA;
     color: white;
