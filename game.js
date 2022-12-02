@@ -312,15 +312,21 @@ function game() {
 
 
     function dieSnake() {
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "#199E58";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         clearInterval(afficherWorld);
         clearInterval(avancerSnake);
 
-        ctx.fillStyle = 'white';
-        ctx.font = '60px Verdana';
-        ctx.fillText("GAME OVER", canvas.width / 5, canvas.height / 1.9);
+        if(document.getElementById("cb-mode").value == 'MODE') {
+            ctx.fillStyle = 'white';
+            ctx.font = '60px Verdana';
+            ctx.fillText("CHOOSE MODE", canvas.width / 8, canvas.height / 1.9);
+        } else {
+            ctx.fillStyle = 'white';
+            ctx.font = '60px Verdana';
+            ctx.fillText("GAME OVER", canvas.width / 5, canvas.height / 1.9);
+        }
 
         if (current_score > high_score_html.textContent) {
             high_score_html.textContent = current_score;
