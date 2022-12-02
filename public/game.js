@@ -1,3 +1,6 @@
+"use strict";
+/*jshint esversion: 6 */
+
 /** @type {String} variable qui pointe le fichier json 'easy' */
 var url_easy = "niveaux/easy.json";
 
@@ -480,7 +483,7 @@ function game() {
 
     var current_score_html = document.getElementById("current-score");
     current_score_html.textContent = 0;
-    current_score_html.style.color = "black";
+    current_score_html.style.color = "white";
     var current_score = 0;
 
 
