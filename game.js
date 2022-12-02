@@ -1,6 +1,106 @@
+let url_easy = "niveaux/easy.json";
+let url_normal = "niveaux/normal.json";
+let url_hardcore = "niveaux/hardcore.json";
+
+let largeur = null;
+let difficulte = null;
+
+let DIFFICULTES = {
+    easy: [],
+    normal: [],
+    hardcore: []
+}
+
+function loadDataAndApply(url) {
+    fetch(url)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw ("Erreur: " + response.status);
+            }
+        })
+        .then(function (data) {
+            largeur = data.squareDimension;
+            difficulte = data.callToMethodToMoveSnakeSpeed;
+            switch (url) {
+                case url_easy:
+                    DIFFICULTES.easy = [largeur,difficulte];
+                    break;
+                case url_normal:
+                    DIFFICULTES.normal = [largeur,difficulte];
+                    break;
+                case url_hardcore:
+                    DIFFICULTES.hardcore = [largeur,difficulte];
+                    break;
+            }
+            //console.log(JSON.parse(JSON.stringify(largeur)));
+        })
+        .catch(function (erreur) {
+            console.log(erreur);
+        });
+}
+
+loadDataAndApply(url_normal);
+
+let current_difficulte = "normal"
+
+let modeChoixBox = document.getElementById("cb-mode");
+
+let easy_already_loaded = false;
+let hardcore_already_loaded = false;
+
+modeChoixBox.addEventListener("change",() => {
+    switch (modeChoixBox.value) {
+        case "Easy":
+            console.log(current_difficulte );
+            if (current_difficulte!=="easy") {
+                console.log("heh");
+                if (!easy_already_loaded) {
+                    loadDataAndApply(url_easy);
+                    easy_already_loaded = true;
+                }
+                else {
+                    largeur = DIFFICULTES.easy[0];
+                    difficulte = DIFFICULTES.easy[1];
+                }
+                current_difficulte = "easy";
+            }
+            break;
+        case "Medium":
+            if (!current_difficulte!=="normal") {
+                largeur = DIFFICULTES.normal[0];
+                difficulte = DIFFICULTES.normal[1];
+                current_difficulte = "normal";
+            }
+            break;
+        case "Hardcore":
+            if (!current_difficulte!=="hardcore") {
+                console.log("heh");
+                if (!hardcore_already_loaded) {
+                    loadDataAndApply(url_hardcore);
+                    hardcore_already_loaded = true;
+                }
+                else {
+                    largeur = DIFFICULTES.hardcore[0];
+                    difficulte = DIFFICULTES.hardcore[1];
+                }
+                current_difficulte = "hardcore";
+            }
+            break;
+    }
+});
+
+
+
 let retryButton = document.getElementById("retry");
 
 function game() {
+
+
+    //let difficulte = prompt("EASY, NORMAL ou HARDCORE?");
+    //difficulte = (difficulte.toUpperCase() === "EASY") ? 520 : (difficulte.toUpperCase() === "NORMAL") ? 355 : 160;
+
 
     retryButton.disabled = true;
     retryButton.style.opacity = 0.6;
@@ -18,7 +118,7 @@ function game() {
     ctx.fillStyle = "lime";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    const largeur = 13;
+    //const largeur = 13;
 
     let WORLD = [...Array(largeur)].map(e => Array(largeur).fill("VERT_CLAIR"));
 
@@ -253,6 +353,7 @@ function game() {
     let afficherWorld = setInterval(afficher, 100);
     afficher();
     avancer();
+    console.log(difficulte + " " + largeur);
     let avancerSnake = setInterval(avancer, difficulte);
 
 
@@ -293,18 +394,22 @@ function game() {
         switch (e.code) {
             case "ArrowUp":
             case "KeyW":
+                e.preventDefault();
                 if (turnUpAllowed) turnUp();
                 break;
             case "ArrowRight":
             case "KeyD":
+                e.preventDefault();
                 if (turnRightAllowed) turnRight();
                 break;
             case "ArrowDown":
             case "KeyS":
+                e.preventDefault();
                 if (turnDownAllowed) turnDown();
                 break;
             case "ArrowLeft":
             case "KeyA":
+                e.preventDefault();
                 if (turnLeftAllowed) turnLeft();
                 break;
         }
@@ -318,15 +423,11 @@ function game() {
         clearInterval(afficherWorld);
         clearInterval(avancerSnake);
 
-        if(document.getElementById("cb-mode").value == 'MODE') {
-            ctx.fillStyle = 'white';
-            ctx.font = '60px Verdana';
-            ctx.fillText("CHOOSE MODE", canvas.width / 8, canvas.height / 1.9);
-        } else {
-            ctx.fillStyle = 'white';
-            ctx.font = '60px Verdana';
-            ctx.fillText("GAME OVER", canvas.width / 5, canvas.height / 1.9);
-        }
+
+        ctx.fillStyle = 'white';
+        ctx.font = '60px Verdana';
+        ctx.fillText("GAME OVER", canvas.width / 5, canvas.height / 1.9);
+
 
         if (current_score > high_score_html.textContent) {
             high_score_html.textContent = current_score;
@@ -377,7 +478,12 @@ let current_size = document.getElementById("current-size");
         spawnFood();
     }
 }
-game();
+
+let playButton = document.getElementById("mainPlayBtn");
+mainPlayBtn.addEventListener("click", () => {
+    game();
+})
+
 
 
 retryButton.addEventListener("click", () => {
