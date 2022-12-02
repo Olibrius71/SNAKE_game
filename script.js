@@ -230,3 +230,11 @@ exitGameSpace.addEventListener('click', event => {
     notDisplayRules();
     state = 0;
 });
+
+let difficulte;
+
+function mode() {
+    difficulte = document.getElementById("cb-mode").value;
+    difficulte = (difficulte.toUpperCase() === "EASY") ? 520 : (difficulte.toUpperCase() === "MEDIUM") ? 355 : 160;
+
+}
