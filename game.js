@@ -97,8 +97,10 @@ let retryButton = document.getElementById("retry");
 
 function game() {
 
+
     //let difficulte = prompt("EASY, NORMAL ou HARDCORE?");
     //difficulte = (difficulte.toUpperCase() === "EASY") ? 520 : (difficulte.toUpperCase() === "NORMAL") ? 355 : 160;
+
 
     retryButton.disabled = true;
     retryButton.style.opacity = 0.6;
@@ -421,15 +423,18 @@ function game() {
         clearInterval(afficherWorld);
         clearInterval(avancerSnake);
 
+
         ctx.fillStyle = 'white';
         ctx.font = '60px Verdana';
         ctx.fillText("GAME OVER", canvas.width / 5, canvas.height / 1.9);
+
 
         if (current_score > high_score_html.textContent) {
             high_score_html.textContent = current_score;
             document.cookie = "highScore=" + current_score;
         }
 
+        current_size.textContent = 0;
         retryButton.disabled = false;
         retryButton.style.opacity = 1;
     }
@@ -458,10 +463,14 @@ function game() {
     current_score_html.style.color = "black";
     let current_score = 0;
 
+
+let current_size = document.getElementById("current-size");
+
     function foodEaten(x, y) {
         SNAKE.unshift([x, y]);
         console.log(current_score_html);
         current_score++;
+        current_size.textContent++;
         current_score_html.textContent++;
         if (current_score>high_score_html.textContent) {
             current_score_html.style.color = "red";
