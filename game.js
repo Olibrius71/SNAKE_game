@@ -2,9 +2,6 @@ let retryButton = document.getElementById("retry");
 
 function game() {
 
-    let difficulte = prompt("EASY, NORMAL ou HARDCORE?");
-    difficulte = (difficulte.toUpperCase() === "EASY") ? 520 : (difficulte.toUpperCase() === "NORMAL") ? 355 : 160;
-
     retryButton.disabled = true;
     retryButton.style.opacity = 0.6;
 
@@ -315,7 +312,7 @@ function game() {
 
 
     function dieSnake() {
-        ctx.fillStyle = "#199E58";
+        ctx.fillStyle = "red";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         clearInterval(afficherWorld);
@@ -325,7 +322,7 @@ function game() {
         ctx.font = '60px Verdana';
         ctx.fillText("GAME OVER", canvas.width / 5, canvas.height / 1.9);
 
-        if (current_ > high_score_html.textContent) {
+        if (current_score > high_score_html.textContent) {
             high_score_html.textContent = current_score;
             document.cookie = "highScore=" + current_score;
         }

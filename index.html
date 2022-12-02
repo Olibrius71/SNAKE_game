@@ -85,11 +85,11 @@
                         <button id="retry">RETRY</button>  
                         
                         <button id="gs-btn-mode">
-                            <select name="cb-mode" id="cb-mode">
-                                <option>MODE</option>
-                                <option>Easy</option>
-                                <option>Medium</option>
-                                <option>Hardcore</option>
+                            <select name="cb-mode" id="cb-mode" onchange="mode()">
+                                <option onselect="mode()">MODE</option>
+                                <option onselect="mode()">Easy</option>
+                                <option onselect="mode()">Medium</option>
+                                <option onselect="mode()">Hardcore</option>
                             </select>
                         </button>
 
