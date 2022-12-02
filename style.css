@@ -104,7 +104,7 @@ body {
 #game-space {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: #616161;
     width: 100%;
 }
 
@@ -139,6 +139,7 @@ body {
     width: 8rem;
 }
 
+
 #cb-mode {
     background: none;
     border: none;
@@ -153,7 +154,6 @@ body {
 
 #game {
     height: 100%;
-    background-color: red;
 }
 
 #footer {

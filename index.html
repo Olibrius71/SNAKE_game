@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>SNAKE</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styleGame.css">
 </head>
 <body>
 
@@ -74,12 +75,15 @@
                 <div id="gs-navbar">
 
                     <div class="gs-indication">
-                        <p>Score : 0</p>
+                        <p>Score : <span class="score" id="current-score">0</span></p>
                         <p>Size : 0</p>
-                        <p>Top score : 0</p>
+                        <p>Top score : <span class="score" id="high-score">0</span></p>
                     </div>
 
                     <div class="gs-btn">
+
+                        <button id="retry">RETRY</button>  
+                        
                         <button id="gs-btn-mode">
                             <select name="cb-mode" id="cb-mode">
                                 <option>MODE</option>
@@ -97,7 +101,10 @@
                 </div>
                 
                 <div id="game">
-
+                    <div id="canvas-container">
+                        <canvas class="canvas" id="fond" width="620" height="620"></canvas>
+                        <canvas class="canvas" id="principal" width="600" height="600"></canvas>
+                    </div>                        
                 </div>
 
             </div>
@@ -108,6 +115,6 @@
         </div>
 
 <script src="script.js"></script>
-
+<script src="game.js"></script>
 </body>
 </html>

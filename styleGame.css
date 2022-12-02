@@ -1,0 +1,55 @@
+#canvas-container {
+    -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/*
+#canvas-container {
+    text-align: center;
+}
+*/
+#principal {
+    margin: 10px;
+}
+
+#fond {
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 2em deepskyblue;
+}
+/*
+#score-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    background-color: blue;
+}
+
+#score-container > * {
+    text-align: right;
+}
+
+#high-score-label {
+    grid-column: 1;
+    grid-row: 1;
+    color: white;
+}
+
+#current-score-label {
+    grid-column: 1;
+    grid-row: 2;
+    color: white;
+}
+
+#retry {
+    margin: 8vh;
+    background-color: orangered;
+    width: 180px;
+    height: 50px;
+    font-size: 26px;
+    color: azure;
+
+    box-shadow: 0 0 1em deepskyblue;
+}
+*/
