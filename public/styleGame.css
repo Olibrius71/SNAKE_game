@@ -1,0 +1,14 @@
+#canvas-container {
+    -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+#principal {
+    margin: 10px;
+}
+
+#fond {
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 2em deepskyblue;
+}

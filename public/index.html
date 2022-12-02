@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SNAKE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styleGame.css">
+</head>
+<body>
+
+        <div id="navbar">
+            <img src="img/snake-logo.png" alt="logo" title="logo" id="logo"/>
+            <button type="button" name="homeBtn" class="btn">
+                <a href="#">Home</a>
+            </button>
+            <button type="button" name="rulesBtn" class="btn">
+                <a href="#">Rules</a>
+            </button>
+            <button type="button" name="playBtn" class="btn">
+                <a href="#">Play</a>
+            </button>
+        </div>
+
+        <div id="header">
+
+            <h1>Welcome to Snake</h1>
+
+            <div class="rules-display" style="display:none">
+                <ul>
+                    <li>
+                        <p>
+                           Snake is a 2D game where the goal is to move a snake towards apples. For indicate the directions
+                           to follow to the snake it’s necessary to use the arrow keys.
+                        </p>
+                    </li><br>
+                    <li>
+                        <p>
+                           For every apples eaten, the snake grows bigger and bigger. The goal is to eat the most apples
+                           possible in order to the head of the snake don’t touch the border of the screen and his own body
+                           or else the game is over.
+                        </p>
+                    </li><br>
+                    <li>
+                        <p>
+                            For the game to be a success, it’s necessary to the snake take up all the space.
+                        </p>
+                    </li><br>
+                    <li>
+                        <p>
+                            Several mode are available : Easy, Medium and Hard. Good luck !
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="switch">
+                <a href="#">
+                    <p>Rules</p>
+                    <img src="img/ligne%20de%20défilement%20bas.png" alt="" title="ligne de défilement"/>
+                    <p style="display:none">Rights</p>  <!-- display of rules button when it's clicked for show more -->
+                </a>
+            </div>
+
+        </div>
+
+        <div id="main">
+            <a href="#">
+            <button type="button" name="mainPlayBtn" id="mainPlayBtn">
+                Play
+            </button>
+            </a>
+
+            <div id="game-space" style="display:none;">
+
+                <div id="gs-navbar">
+
+                    <div class="gs-indication">
+                        <p>Score : <span class="score" id="current-score">0</span></p>
+                        <p>Size : <span id="current-size">0</span></p>
+                        <p>Top score : <span class="score" id="high-score">0</span></p>
+                    </div>
+
+                    <div class="gs-btn">
+
+                        <button id="retry">RETRY</button>  
+                        
+                        <button id="gs-btn-mode">
+                            <select name="cb-mode" id="cb-mode" onchange="mode()">
+                                <option>MODE</option>
+                                <option>Easy</option>
+                                <option>Medium</option>
+                                <option>Hardcore</option>
+                            </select>
+                        </button>
+
+                        <button id="gs-btn-exit">
+                            Exit
+                        </button>
+                    </div>
+
+                </div>
+                
+                <div id="game">
+                    <div id="canvas-container">
+                        <canvas class="canvas" id="fond" width="620" height="620"></canvas>
+                        <canvas class="canvas" id="principal" width="600" height="600"></canvas>
+                    </div>                        
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>© M. AGHUMYAN & A. BEN JEMIA, All rights reserved</p>
+        </div>
+
+<script src="script.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
